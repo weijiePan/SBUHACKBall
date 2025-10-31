@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeftSidebar from "@/app/ui/left-sidebar";
+import Header from "@/app/ui/header";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,12 +27,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        <nav>
-          <LeftSidebar />
-        </nav>
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <div className="flex flex-row min-h-screen w-full">
+            <LeftSidebar />
+            <div className="p-2 w-full">
+              {children}
+            </div>
+          </div>
+        </div>
+
       </body>
     </html>
   );
