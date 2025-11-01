@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 export default async function ThemeToggleButton() {
     const cookieStore = await cookies()
     const theme = cookieStore.get('theme');
+    console.log(theme);
     return (
         <button onClick={toggleTheme} className="button-transition flex flex-row justify-center items-center p-2 rounded-full">
             <div className="">
