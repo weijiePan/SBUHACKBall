@@ -33,7 +33,7 @@ export default function RootLayout({
           <Header />
           <div className="flex flex-row min-h-screen w-full">
             <LeftSidebar />
-            <div className="p-2 w-full">
+            <div className="p-2 w-full bg-background-tone1">
               {children}
             </div>
           </div>
