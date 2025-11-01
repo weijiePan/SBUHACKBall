@@ -18,11 +18,11 @@ export default function NavLink({
   const isActive = (slug == "" && !segment) || (slug === segment)
 
   return (
-    <div className={`h-10 flex flex-row px-2 py-1 rounded w-full ${isActive ? 'bg-foreground text-background' : 'text-foreground'}`}>
+    <div className={`h-10 button-transition flex flex-row px-2 py-1 rounded w-full ${isActive ? 'bg-primary text-on-primary' : ''}`}>
       <Link className="flex items-center flex-row gap-2" href={`/${slug}`}>
         {children}
-        <p className="max-w-md text-md font-medium leading-8 text-text truncate">
-        {!slug ? "Video Analysis" : slug}
+        <p className="max-w-md text-md font-medium leading-8 truncate">
+        {!slug ? "video analysis" : slug}
         </p>
       </Link>
     </div>
