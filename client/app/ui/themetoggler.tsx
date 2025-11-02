@@ -1,13 +1,11 @@
-'use server'
-
-import toggleTheme from "../cookie-actions"
 import { cookies } from "next/headers";
+import toggleTheme from "../cookie-actions"
 
-// This is a client component
+// This is a server component as cookies (next/headers) can only be used in server components
 export default async function ThemeToggleButton() {
     const cookieStore = await cookies()
     const theme = cookieStore.get('theme');
-    console.log(theme);
+    // console.log(theme);
     return (
         <button onClick={toggleTheme} className="button-transition flex flex-row justify-center items-center p-2 rounded-full">
             <div className="">
